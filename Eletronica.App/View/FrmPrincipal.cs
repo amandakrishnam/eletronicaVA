@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Eletronica.App.View
 {
-    public partial class OrdemServicoFormulario : Form
+    public partial class FrmPrincipal : Form
     {
-        public OrdemServicoFormulario()
+        public FrmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void tsmCliente_Click(object sender, EventArgs e)
+        {
+            FrmListaCliente frmListaCliente = new FrmListaCliente();
+            frmListaCliente.ShowDialog();
         }
     }
 }

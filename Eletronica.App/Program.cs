@@ -1,11 +1,13 @@
 using Eletronica.App.Data;
+using Eletronica.App.Entities;
 using Eletronica.App.View;
-using System;
 
 namespace Eletronica.App
-{
+{    
     internal static class Program
     {
+        internal static Repositorio repositorio;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -16,8 +18,9 @@ namespace Eletronica.App
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new OrdemServicoFormulario());
-            var context = new ContextoDados();
+            Application.Run(new FrmPrincipal());
+            var context = new ContextoDados();          
+            repositorio = new Repositorio(context);
         }
     }
 }
