@@ -14,9 +14,67 @@ Os principais agregados e entidades do domínio incluem:
 
 ## Como Executar o Projeto
 
-_(Esta seção será atualizada com instruções detalhadas sobre a configuração do banco de dados, compilação e execução do projeto.)_
+Para executar este projeto em seu ambiente de desenvolvimento, siga os passos abaixo:
 
-Atualmente, o projeto está configurado para utilizar um banco de dados PostgreSQL. As configurações de conexão podem ser encontradas na classe `ContextoDados.cs`.
+### Pré-requisitos
+
+*   **PostgreSQL:** Certifique-se de ter o PostgreSQL instalado e em execução. Você pode baixá-lo em [https://www.postgresql.org/download/](https://www.postgresql.org/download/).
+*   **.NET SDK:** É necessário ter o .NET SDK instalado (versão compatível com o projeto, e.g., .NET 7 ou superior). Você pode baixá-lo em [https://dotnet.microsoft.com/download](https://dotnet.microsoft.com/download).
+*   **EF Core CLI tools:** Instale as ferramentas de linha de comando do Entity Framework Core. Se ainda não as tiver, instale globalmente com o comando:
+    ```bash
+    dotnet tool install --global dotnet-ef
+    ```
+
+### Configuração do Banco de Dados
+
+1.  **String de Conexão:** A configuração da string de conexão com o banco de dados PostgreSQL encontra-se no arquivo `Eletronica.App/Data/ContextoDados.cs`. Por padrão, está configurada para:
+    ```csharp
+    optionsBuilder.UseNpgsql("Host=localhost;Database=eletronicaBD;Username=postgres;Password=1234");
+    ```
+    Ajuste os valores de `Host`, `Database`, `Username`, e `Password` conforme a configuração do seu ambiente PostgreSQL. Certifique-se de que o banco de dados (`eletronicaBD` por padrão) exista ou crie-o antes de prosseguir.
+
+2.  **Aplicar Migrations:** Após configurar a string de conexão, abra um terminal na pasta raiz do projeto `Eletronica.App` (onde o arquivo `.csproj` está localizado) e execute o seguinte comando para aplicar as migrations e criar/atualizar o esquema do banco de dados:
+    ```bash
+    dotnet ef database update
+    ```
+
+### Compilando e Executando a Aplicação
+
+Existem duas maneiras principais de compilar e executar a aplicação:
+
+1.  **Via Linha de Comando (CLI):**
+    *   Navegue até a pasta raiz do projeto `Eletronica.App`.
+    *   Compile o projeto com o comando:
+        ```bash
+        dotnet build
+        ```
+    *   Execute a aplicação com:
+        ```bash
+        dotnet run
+        ```
+
+2.  **Via Visual Studio (ou outra IDE compatível):**
+    *   Abra o arquivo da solução `eletronica.sln` no Visual Studio.
+    *   Configure `Eletronica.App` como projeto de inicialização.
+    *   Pressione F5 ou clique no botão "Iniciar" para compilar e executar o projeto.
+
+A aplicação Windows Forms deverá ser iniciada.
+
+## Funcionalidades
+
+O sistema oferece as seguintes funcionalidades principais:
+
+*   **Gerenciamento de Clientes:** Cadastro, consulta, atualização e exclusão de clientes.
+*   **Gerenciamento de Produtos:** Cadastro e associação de produtos eletrônicos aos seus respectivos clientes.
+*   **Gestão de Ordens de Serviço:**
+    *   Criação de novas ordens de serviço detalhando o produto, o defeito relatado e informações do cliente.
+    *   Definição de orçamento para o reparo.
+    *   Acompanhamento do status da ordem de serviço (ex: Em Espera, Em Andamento, Pronto).
+    *   Registro dos serviços realizados.
+*   **Gerenciamento de Usuários e Grupos de Usuários:** (Funcionalidade inferida)
+    *   Cadastro e controle de usuários do sistema.
+    *   Definição de grupos de usuários com diferentes níveis de permissão (esta parte é uma suposição comum para tais entidades, mas pode ser ajustada se mais detalhes forem conhecidos).
+*   **Gerenciamento de Tipos de Serviços:** Cadastro dos diferentes tipos de serviços que a eletrônica pode realizar.
 
 ## Tecnologias Utilizadas
 
