@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Eletronica.App.View
 {
-    public partial class FrmListarCliente : Form
+    public partial class FrmConsultarCliente : Form
     {
         ClienteServices clienteServices = new ClienteServices();
-        public FrmListarCliente()
+        public FrmConsultarCliente()
         {
             InitializeComponent();
              clienteServices.ConsultarAsync("");
@@ -23,7 +23,7 @@ namespace Eletronica.App.View
 
         private void btnAdicionarCliente_Click(object sender, EventArgs e)
         {
-            FrmCliente frmCliente = new FrmCliente();
+            FrmCadastrarCliente frmCliente = new FrmCadastrarCliente();
             frmCliente.ShowDialog();
         }
 

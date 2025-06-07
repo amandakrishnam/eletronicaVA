@@ -19,7 +19,7 @@ namespace Eletronica.App.View
 
         private void tsmCliente_Click(object sender, EventArgs e)
         {
-            FrmListarCliente frmListaCliente = new FrmListarCliente();
+            FrmConsultarCliente frmListaCliente = new FrmConsultarCliente();
             frmListaCliente.ShowDialog();
         }
     }

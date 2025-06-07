@@ -1,6 +1,6 @@
 ﻿namespace Eletronica.App.View
 {
-    partial class FrmProduto
+    partial class FrmCadastrarProduto
     {
         /// <summary>
         /// Required designer variable.

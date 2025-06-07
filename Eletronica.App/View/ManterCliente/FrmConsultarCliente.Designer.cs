@@ -1,6 +1,6 @@
 ﻿namespace Eletronica.App.View
 {
-    partial class FrmListarCliente
+    partial class FrmConsultarCliente
     {
         /// <summary>
         /// Required designer variable.

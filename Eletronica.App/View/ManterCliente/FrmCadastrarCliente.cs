@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Eletronica.App.View
 {
-    public partial class FrmCliente : Form
+    public partial class FrmCadastrarCliente : Form
     {
-        public FrmCliente()
+        public FrmCadastrarCliente()
         {
             InitializeComponent();
         }
