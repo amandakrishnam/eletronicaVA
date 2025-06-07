@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Eletronica.App.View
 {
-    public partial class FrmListaCliente : Form
+    public partial class FrmListarCliente : Form
     {
         ClienteServices clienteServices = new ClienteServices();
-        public FrmListaCliente()
+        public FrmListarCliente()
         {
             InitializeComponent();
              clienteServices.ConsultarAsync("");
