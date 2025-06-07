@@ -25,7 +25,7 @@ namespace Eletronica.App.Entities
             Pronto
         }
         [Required]
-        public required TiposStatus Status { get; set; }
+        public TiposStatus Status { get; set; }
         
         public int IdCliente { get; set; }
         [ForeignKey("IdCliente")]

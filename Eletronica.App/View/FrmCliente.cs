@@ -23,5 +23,10 @@ namespace Eletronica.App.View
             ClienteServices clienteServices = new ClienteServices();
             await clienteServices.CadastrarAsync(txtNome.Text, txtEmail.Text, txtTelefone.Text, txtCpfCnpj.Text, txtRG.Text, txtIE.Text);
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

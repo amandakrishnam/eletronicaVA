@@ -24,11 +24,11 @@ namespace Eletronica.App.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<ClienteEntity> Clientes { get; }
-        public DbSet<GrupoUsuarioEntity> GruposUsuarios { get; }
-        public DbSet<OrdemServicoEntity> OrdensServicos { get; }
-        public DbSet<ProdutoEntity> Produtos { get; }
-        public DbSet<ServicoEntity> Servicos { get; }
-        public DbSet<UsuarioEntity> Usuarios { get; }
+        public DbSet<ClienteEntity>? Clientes { get; }
+        public DbSet<GrupoUsuarioEntity>? GruposUsuarios { get; }
+        public DbSet<OrdemServicoEntity>? OrdensServicos { get; }
+        public DbSet<ProdutoEntity>? Produtos { get; }
+        public DbSet<ServicoEntity>? Servicos { get; }
+        public DbSet<UsuarioEntity>? Usuarios { get; } //*adicionei ? por causa de um aviso
     }
 }

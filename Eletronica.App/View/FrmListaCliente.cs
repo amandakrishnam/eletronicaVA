@@ -14,9 +14,11 @@ namespace Eletronica.App.View
 {
     public partial class FrmListaCliente : Form
     {
+        ClienteServices clienteServices = new ClienteServices();
         public FrmListaCliente()
         {
             InitializeComponent();
+             clienteServices.ConsultarAsync("");
         }
 
         private void btnAdicionarCliente_Click(object sender, EventArgs e)
@@ -25,9 +27,8 @@ namespace Eletronica.App.View
             frmCliente.ShowDialog();
         }
 
-        private async void txtNome_TextChanged(object sender, EventArgs e)
-        {
-            ClienteServices clienteServices = new ClienteServices();
+        private async void txtNome_TextChanged(object sender, EventArgs e) {
+
             List<ClienteEntity> clientes = await clienteServices.ConsultarAsync(txtNome.Text);
 
             dgvClientes.DataSource = clientes;
