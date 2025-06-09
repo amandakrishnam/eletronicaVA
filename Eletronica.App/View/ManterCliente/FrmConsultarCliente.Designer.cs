@@ -65,16 +65,15 @@ namespace Eletronica.App.View
             dgvClientes.RowHeadersWidth = 51;
             dgvClientes.Size = new Size(887, 509);
             dgvClientes.TabIndex = 2;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
+            dgvClientes.CellContentClick += dgvClientes_CellContentClick;
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
             lblNome.Location = new Point(22, 40);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(66, 20);
+            lblNome.Size = new Size(53, 20);
             lblNome.TabIndex = 3;
-            lblNome.Text = "Consulta";
             lblNome.Text = "Nome:";
             // 
             // FrmConsultarCliente
@@ -95,10 +94,10 @@ namespace Eletronica.App.View
             PerformLayout();
         }
 
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private DataGridViewButtonColumn Editar;
         private DataGridViewButtonColumn Excluir;

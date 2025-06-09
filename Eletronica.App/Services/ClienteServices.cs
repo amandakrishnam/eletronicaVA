@@ -46,19 +46,9 @@ namespace Eletronica.App.Services
             };
             await Program.repositorio.Clientes.UpdateAsnc(cliente);
         }
-        public async Task ExcluirAsync(int id, string nome, string email, string telefone, string cpfCnpj, string rg, string ie)
-        {
-            ClienteEntity cliente = new ClienteEntity()
-            {
-                Id = id,
-                CnpjCpf = cpfCnpj,
-                Email = email,
-                IE = ie,
-                Nome = nome,
-                RG = rg,
-                Telefone = telefone
-            };
-            await Program.repositorio.Clientes.DeleteAsync(cliente);
+        public async Task ExcluirAsync(int id)
+        { 
+            await Program.repositorio.Clientes.DeleteAsync(c=>c.Id==id);
         }
 
     }
