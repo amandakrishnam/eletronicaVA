@@ -1,4 +1,5 @@
-﻿namespace Eletronica.App.View
+﻿
+namespace Eletronica.App.View
 {
     partial class FrmConsultarCliente
     {
@@ -32,8 +33,6 @@
             txtNome = new TextBox();
             dgvClientes = new DataGridView();
             lblNome = new Label();
-            button1 = new Button();
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -53,7 +52,7 @@
             txtNome.Location = new Point(94, 37);
             txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(531, 27);
+            txtNome.Size = new Size(715, 27);
             txtNome.TabIndex = 1;
             txtNome.TextChanged += txtNome_TextChanged;
             // 
@@ -66,6 +65,7 @@
             dgvClientes.RowHeadersWidth = 51;
             dgvClientes.Size = new Size(887, 509);
             dgvClientes.TabIndex = 2;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // lblNome
             // 
@@ -75,34 +75,13 @@
             lblNome.Size = new Size(66, 20);
             lblNome.TabIndex = 3;
             lblNome.Text = "Consulta";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(723, 33);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(86, 31);
-            button1.TabIndex = 4;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(631, 33);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(86, 31);
-            button2.TabIndex = 5;
-            button2.Text = "Cadastrar";
-            button2.UseVisualStyleBackColor = true;
+            lblNome.Text = "Nome:";
             // 
             // FrmConsultarCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(lblNome);
             Controls.Add(dgvClientes);
             Controls.Add(txtNome);
@@ -116,6 +95,13 @@
             PerformLayout();
         }
 
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private DataGridViewButtonColumn Editar;
+        private DataGridViewButtonColumn Excluir;
         #endregion
 
         private Button btnAdicionarCliente;
@@ -123,7 +109,5 @@
         private DataGridView dgvClientes;
         private Label lblNome;
         private TextBox txtNome;
-        private Button button1;
-        private Button button2;
     }
 }
