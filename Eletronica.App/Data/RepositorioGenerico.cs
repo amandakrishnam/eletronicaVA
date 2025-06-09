@@ -38,6 +38,34 @@ namespace Eletronica.App.Data
             await _context.SaveChangesAsync();
             return model;
         }
+        public async Task DeleteAsync(Expression<Func<T, bool>> predicate)
+        {
+            T? model = await _context.Set<T>().FirstOrDefaultAsync(predicate);
+
+            if (model == null)
+                return;
+
+            _context.Set<T>().Remove(model);
+            await _context.SaveChangesAsync();
+
+            RemoveFromContext(model);
+        }
+
+        private void RemoveFromContext(T model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task DeleteAsync(T model)
+        {
+            if (model == null)
+                return;
+
+            _context.Set<T>().Remove(model);
+            await _context.SaveChangesAsync();
+
+            RemoveFromContext(model);
+        }
 
         public async Task<T?> GetByIdAsync(long id)
         {

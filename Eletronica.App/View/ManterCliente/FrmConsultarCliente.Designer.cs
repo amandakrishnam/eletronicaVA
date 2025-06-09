@@ -32,54 +32,83 @@
             txtNome = new TextBox();
             dgvClientes = new DataGridView();
             lblNome = new Label();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // btnAdicionarCliente
             // 
-            btnAdicionarCliente.Location = new Point(713, 22);
+            btnAdicionarCliente.Location = new Point(815, 33);
+            btnAdicionarCliente.Margin = new Padding(3, 4, 3, 4);
             btnAdicionarCliente.Name = "btnAdicionarCliente";
-            btnAdicionarCliente.Size = new Size(75, 23);
+            btnAdicionarCliente.Size = new Size(86, 31);
             btnAdicionarCliente.TabIndex = 0;
-            btnAdicionarCliente.Text = "button1";
+            btnAdicionarCliente.Text = "Cadastrar";
             btnAdicionarCliente.UseVisualStyleBackColor = true;
             btnAdicionarCliente.Click += btnAdicionarCliente_Click;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(63, 27);
+            txtNome.Location = new Point(94, 37);
+            txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(572, 23);
+            txtNome.Size = new Size(531, 27);
             txtNome.TabIndex = 1;
             txtNome.TextChanged += txtNome_TextChanged;
             // 
             // dgvClientes
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(12, 56);
+            dgvClientes.Location = new Point(14, 75);
+            dgvClientes.Margin = new Padding(3, 4, 3, 4);
             dgvClientes.Name = "dgvClientes";
-            dgvClientes.Size = new Size(776, 382);
+            dgvClientes.RowHeadersWidth = 51;
+            dgvClientes.Size = new Size(887, 509);
             dgvClientes.TabIndex = 2;
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(19, 30);
+            lblNome.Location = new Point(22, 40);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(38, 15);
+            lblNome.Size = new Size(66, 20);
             lblNome.TabIndex = 3;
-            lblNome.Text = "label1";
+            lblNome.Text = "Consulta";
             // 
-            // FrmListaCliente
+            // button1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            button1.Location = new Point(723, 33);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(86, 31);
+            button1.TabIndex = 4;
+            button1.Text = "Cadastrar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(631, 33);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(86, 31);
+            button2.TabIndex = 5;
+            button2.Text = "Cadastrar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // FrmConsultarCliente
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(lblNome);
             Controls.Add(dgvClientes);
             Controls.Add(txtNome);
             Controls.Add(btnAdicionarCliente);
-            Name = "FrmListaCliente";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FrmConsultarCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmListaCliente";
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
@@ -94,5 +123,7 @@
         private DataGridView dgvClientes;
         private Label lblNome;
         private TextBox txtNome;
+        private Button button1;
+        private Button button2;
     }
 }

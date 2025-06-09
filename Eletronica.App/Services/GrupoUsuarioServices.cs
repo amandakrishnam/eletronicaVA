@@ -21,5 +21,10 @@ namespace Eletronica.App.Services
 
             await Program.repositorio.GruposUsuarios.InsertAsync(grupoUsuario);
         }
+
+        public async Task AtualizarAsync(GrupoUsuarioEntity grupoUsuario)
+        {
+            await Program.repositorio.GruposUsuarios.UpdateAsnc(grupoUsuario);
+        }
     }
 }
