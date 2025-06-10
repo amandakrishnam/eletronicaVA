@@ -28,17 +28,18 @@ namespace Eletronica.App.Services
         }
 
         public async Task<List<ClienteEntity>> ConsultarAsync(string nome)
-        {
+        {          
+        
             return await Program.repositorio.Clientes.ListAsync(c => c.Nome.Contains(nome));
         }
 
-        public async Task AtualizarAsync(string nome, string email, string telefone, string cpfCnpj, string rg, string ie)
+        public async Task AtualizarAsync(int id, string nome, string email, string telefone, string cpfCnpj, string rg, string ie)
         {
             ClienteEntity cliente = new ClienteEntity()
             {
+                Id = id,
                 CnpjCpf = cpfCnpj,
-                Email = email,
-                Id = 0, // Aqui você deve definir o ID correto do cliente a ser atualizado
+                Email = email,              
                 IE = ie,
                 Nome = nome,
                 RG = rg,
@@ -46,6 +47,7 @@ namespace Eletronica.App.Services
             };
             await Program.repositorio.Clientes.UpdateAsnc(cliente);
         }
+
         public async Task ExcluirAsync(int id)
         { 
             await Program.repositorio.Clientes.DeleteAsync(c=>c.Id==id);

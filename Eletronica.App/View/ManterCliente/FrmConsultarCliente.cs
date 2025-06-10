@@ -18,7 +18,6 @@ namespace Eletronica.App.View
         public FrmConsultarCliente()
         {
             InitializeComponent();
-            clienteServices.ConsultarAsync("");
         }
 
         private async void btnAdicionarCliente_Click(object sender, EventArgs e)
@@ -30,20 +29,17 @@ namespace Eletronica.App.View
 
         private async Task CarregarClientesAsync()
         {
+            btnBuscar.Enabled = false;
             ClienteServices clienteServices = new ClienteServices();
             List<ClienteEntity> clientes = await clienteServices.ConsultarAsync(txtNome.Text);
             dgvClientes.DataSource = clientes;
-            // Opcional: Ajustar automaticamente o tamanho das colunas
             dgvClientes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            btnBuscar.Enabled = true;
         }
 
         private async void txtNome_TextChanged(object sender, EventArgs e)
         {
-            //List<ClienteEntity> clientes = await clienteServices.ConsultarAsync(txtNome.Text); DE AGORA
-            //dgvClientes.DataSource = clientes;
-            await CarregarClientesAsync();
-            // Opcional: Ajustar automaticamente o tamanho das colunas
-            //dgvClientes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
         }
 
         private async void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -54,32 +50,55 @@ namespace Eletronica.App.View
                 string columnName = dgvClientes.Columns[e.ColumnIndex].Name;
                 if (columnName == "Editar")
                 {
-                    var clienteParaEditar = dgvClientes.Rows[e.RowIndex].DataBoundItem as ClienteEntity;
-                    if (clienteParaEditar != null)
-                    {
-                        // Assuming FrmCliente has a constructor that takes ClienteEntity
-                        FrmCadastrarCliente frmCliente = new FrmCadastrarCliente(clienteParaEditar);
-                        frmCliente.ShowDialog();
-                        await CarregarClientesAsync(); // Refresh data after potential edit
-                    }
+
                 }
                 else if (columnName == "Excluir")
                 {
-                    var clienteParaDeletar = dgvClientes.Rows[e.RowIndex].DataBoundItem as ClienteEntity;
-                    if (clienteParaDeletar != null)
-                    {
-                        var confirmResult = MessageBox.Show("Tem certeza que deseja excluir este cliente?",
-                                                             "Confirmar Exclusão",
-                                                             MessageBoxButtons.YesNo);
-                        if (confirmResult == DialogResult.Yes)
-                        {
-                            ClienteServices clienteServices = new ClienteServices();
-                            await clienteServices.ExcluirAsync(clienteParaDeletar.Id);
-                            await CarregarClientesAsync(); 
-                        }
-                    }
+
                 }
             }
+        }
+
+        private async void btnExcluir_Click(object sender, EventArgs e)
+        {
+            var linha = dgvClientes.SelectedRows;
+
+            if (linha.Count > 0)
+            {
+                ClienteEntity? cliente = linha[0].DataBoundItem as ClienteEntity;
+                if (cliente != null)
+                {
+                    DialogResult resultado = MessageBox.Show($"Deja realmete excluir o cliente\n{cliente.Nome}", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        await new ClienteServices().ExcluirAsync(cliente.Id);
+                        await CarregarClientesAsync();
+                    }
+                    return;
+                }
+            }
+            else
+                Mensagem();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Mensagem()
+        {
+            MessageBox.Show("Por favor, selecione um cliente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private async void btnBuscar_Click(object sender, EventArgs e)
+        {
+            await CarregarClientesAsync();
+        }
+
+        private async void FrmConsultarCliente_Load(object sender, EventArgs e)
+        {
+            await CarregarClientesAsync();
         }
     }
 }

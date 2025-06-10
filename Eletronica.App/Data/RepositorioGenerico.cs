@@ -47,13 +47,6 @@ namespace Eletronica.App.Data
 
             _context.Set<T>().Remove(model);
             await _context.SaveChangesAsync();
-
-            RemoveFromContext(model);
-        }
-
-        private void RemoveFromContext(T model)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task DeleteAsync(T model)
@@ -63,8 +56,6 @@ namespace Eletronica.App.Data
 
             _context.Set<T>().Remove(model);
             await _context.SaveChangesAsync();
-
-            RemoveFromContext(model);
         }
 
         public async Task<T?> GetByIdAsync(long id)
