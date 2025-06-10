@@ -41,7 +41,6 @@
             lblCpfCnpj = new Label();
             lblRG = new Label();
             lblIE = new Label();
-            button1 = new Button();
             SuspendLayout();
             // 
             // txtNome
@@ -95,10 +94,10 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(459, 495);
+            btnSalvar.Location = new Point(383, 495);
             btnSalvar.Margin = new Padding(3, 4, 3, 4);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(86, 31);
+            btnSalvar.Size = new Size(162, 31);
             btnSalvar.TabIndex = 6;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
@@ -158,21 +157,11 @@
             lblIE.TabIndex = 12;
             lblIE.Text = "IE";
             // 
-            // button1
-            // 
-            button1.Location = new Point(346, 497);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 13;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // FrmCliente
+            // FrmCadastrarCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
-            Controls.Add(button1);
             Controls.Add(lblIE);
             Controls.Add(lblRG);
             Controls.Add(lblCpfCnpj);
@@ -188,7 +177,7 @@
             Controls.Add(txtNome);
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
-            Name = "FrmCliente";
+            Name = "FrmCadastrarCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCliente";
             ResumeLayout(false);
@@ -210,6 +199,5 @@
         private Label lblCpfCnpj;
         private Label lblRG;
         private Label lblIE;
-        private Button button1;
     }
 }

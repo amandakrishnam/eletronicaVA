@@ -84,6 +84,21 @@ namespace Eletronica.App.View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            var linha = dgvClientes.SelectedRows;
+            if (linha.Count > 0)
+            {
+                ClienteEntity? cliente = linha[0].DataBoundItem as ClienteEntity;
+                if (cliente != null)
+                {
+                    FrmCadastrarCliente frmCliente = new FrmCadastrarCliente(cliente.Id);
+                    frmCliente.ShowDialog();
+                    CarregarClientesAsync();
+                    return;
+                }
+            }
+            else
+                Mensagem();
+
         }
 
         private void Mensagem()

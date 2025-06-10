@@ -63,8 +63,14 @@ namespace Eletronica.App.View
             if (_id != null)
             {
                 ClienteServices clienteServices = new ClienteServices();
-                ClienteEntity cliente = clienteServices.ConsultarAsync((int)_id);
+               // jhonata ClienteEntity cliente = clienteServices.ConsultarAsync((int)_id);
+                ClienteEntity cliente = await clienteServices.ConsultarPorIdAsync((int)_id);
                 txtNome.Text = cliente.Nome;
+                txtEmail.Text = cliente.Email;
+                txtTelefone.Text = cliente.Telefone;
+                txtCpfCnpj.Text = cliente.CnpjCpf;
+                txtRG.Text = cliente.RG;
+                txtIE.Text = cliente.IE ?? string.Empty; // IE pode ser nulo, então usamos o operador de coalescência nula para garantir que não seja null
             }
         }
     }

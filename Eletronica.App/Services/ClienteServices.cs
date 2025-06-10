@@ -33,6 +33,14 @@ namespace Eletronica.App.Services
             return await Program.repositorio.Clientes.ListAsync(c => c.Nome.Contains(nome));
         }
 
+        // teste
+          public async Task<ClienteEntity> ConsultarPorIdAsync(int id)
+        {
+            return await Program.repositorio.Clientes.GetAsync(c => c.Id == id);
+        }
+        //fim teste
+
+
         public async Task AtualizarAsync(int id, string nome, string email, string telefone, string cpfCnpj, string rg, string ie)
         {
             ClienteEntity cliente = new ClienteEntity()

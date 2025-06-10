@@ -29,6 +29,7 @@ namespace Eletronica.App.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarCliente));
             btnAdicionarCliente = new Button();
             txtNome = new TextBox();
             dgvClientes = new DataGridView();
@@ -42,9 +43,10 @@ namespace Eletronica.App.View
             // 
             // btnAdicionarCliente
             // 
-            btnAdicionarCliente.Location = new Point(607, 13);
+            btnAdicionarCliente.Location = new Point(652, 15);
+            btnAdicionarCliente.Margin = new Padding(3, 4, 3, 4);
             btnAdicionarCliente.Name = "btnAdicionarCliente";
-            btnAdicionarCliente.Size = new Size(67, 23);
+            btnAdicionarCliente.Size = new Size(84, 31);
             btnAdicionarCliente.TabIndex = 0;
             btnAdicionarCliente.Text = "Cadastrar";
             btnAdicionarCliente.UseVisualStyleBackColor = true;
@@ -52,20 +54,22 @@ namespace Eletronica.App.View
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(61, 13);
+            txtNome.Location = new Point(70, 17);
+            txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(500, 23);
+            txtNome.Size = new Size(537, 27);
             txtNome.TabIndex = 1;
             // 
             // dgvClientes
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(12, 42);
+            dgvClientes.Location = new Point(14, 56);
+            dgvClientes.Margin = new Padding(3, 4, 3, 4);
             dgvClientes.MultiSelect = false;
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersWidth = 51;
-            dgvClientes.Size = new Size(776, 396);
+            dgvClientes.Size = new Size(887, 528);
             dgvClientes.TabIndex = 2;
             dgvClientes.TabStop = false;
             dgvClientes.CellContentClick += dgvClientes_CellContentClick;
@@ -73,17 +77,18 @@ namespace Eletronica.App.View
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(12, 17);
+            lblNome.Location = new Point(14, 23);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(43, 15);
+            lblNome.Size = new Size(53, 20);
             lblNome.TabIndex = 3;
             lblNome.Text = "Nome:";
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(680, 13);
+            btnExcluir.Location = new Point(740, 15);
+            btnExcluir.Margin = new Padding(3, 4, 3, 4);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(51, 23);
+            btnExcluir.Size = new Size(84, 31);
             btnExcluir.TabIndex = 4;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
@@ -91,9 +96,10 @@ namespace Eletronica.App.View
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(737, 13);
+            btnEditar.Location = new Point(825, 15);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(51, 23);
+            btnEditar.Size = new Size(84, 31);
             btnEditar.TabIndex = 5;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
@@ -106,18 +112,20 @@ namespace Eletronica.App.View
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(567, 13);
+            btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
+            btnBuscar.Location = new Point(611, 15);
+            btnBuscar.Margin = new Padding(3, 4, 3, 4);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(34, 23);
+            btnBuscar.Size = new Size(39, 31);
             btnBuscar.TabIndex = 6;
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // FrmConsultarCliente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(btnBuscar);
             Controls.Add(btnEditar);
             Controls.Add(btnExcluir);
@@ -125,6 +133,7 @@ namespace Eletronica.App.View
             Controls.Add(dgvClientes);
             Controls.Add(txtNome);
             Controls.Add(btnAdicionarCliente);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmConsultarCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmListaCliente";
