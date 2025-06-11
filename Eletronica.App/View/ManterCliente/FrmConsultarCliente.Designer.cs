@@ -142,18 +142,10 @@ namespace Eletronica.App.View
             ResumeLayout(false);
             PerformLayout();
         }
-
-        //private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        private DataGridViewButtonColumn Editar;
-        private DataGridViewButtonColumn Excluir;
         #endregion
 
         private Button btnAdicionarCliente;
-        private TextBox textBox1;
+       // private TextBox textBox1;
         private DataGridView dgvClientes;
         private Label lblNome;
         private TextBox txtNome;

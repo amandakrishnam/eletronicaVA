@@ -16,10 +16,10 @@ namespace Eletronica.App.View
     {
         private readonly int? _id;
 
-        public FrmCadastrarCliente(int? id)
+        public FrmCadastrarCliente()
         {
             InitializeComponent();
-            _id = id;
+            //_id = id;
         }
 
         private async Task FrmCadastrarCliente_Load(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace Eletronica.App.View
             if (_id != null)
             {
                 ClienteServices clienteServices = new ClienteServices();
-               // jhonata ClienteEntity cliente = clienteServices.ConsultarAsync((int)_id);
+                // jhonata ClienteEntity cliente = clienteServices.ConsultarAsync((int)_id);
                 ClienteEntity cliente = await clienteServices.ConsultarPorIdAsync((int)_id);
                 txtNome.Text = cliente.Nome;
                 txtEmail.Text = cliente.Email;

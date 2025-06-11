@@ -82,9 +82,9 @@ namespace Eletronica.App.View
                 Mensagem();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private async void btnEditar_Click(object sender, EventArgs e)
         {
-            var linha = dgvClientes.SelectedRows;
+           /* var linha = dgvClientes.SelectedRows;
             if (linha.Count > 0)
             {
                 ClienteEntity? cliente = linha[0].DataBoundItem as ClienteEntity;
@@ -92,12 +92,15 @@ namespace Eletronica.App.View
                 {
                     FrmCadastrarCliente frmCliente = new FrmCadastrarCliente(cliente.Id);
                     frmCliente.ShowDialog();
-                    CarregarClientesAsync();
+                    await CarregarClientesAsync();
+
+                    // amanda
+                    Update();
                     return;
                 }
             }
             else
-                Mensagem();
+                Mensagem();*/
 
         }
 

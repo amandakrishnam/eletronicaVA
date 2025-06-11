@@ -38,8 +38,6 @@
             ordensDeServiçosToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
-            consultarClienteToolStripMenuItem = new ToolStripMenuItem();
-            cadastrarClienteToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,7 +61,6 @@
             // 
             // tsmCliente
             // 
-            tsmCliente.DropDownItems.AddRange(new ToolStripItem[] { consultarClienteToolStripMenuItem, cadastrarClienteToolStripMenuItem });
             tsmCliente.Name = "tsmCliente";
             tsmCliente.Size = new Size(224, 26);
             tsmCliente.Text = "Cliente";
@@ -112,18 +109,6 @@
             cadastrarToolStripMenuItem.Size = new Size(155, 26);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
-            // consultarClienteToolStripMenuItem
-            // 
-            consultarClienteToolStripMenuItem.Name = "consultarClienteToolStripMenuItem";
-            consultarClienteToolStripMenuItem.Size = new Size(224, 26);
-            consultarClienteToolStripMenuItem.Text = "Consultar Cliente";
-            // 
-            // cadastrarClienteToolStripMenuItem
-            // 
-            cadastrarClienteToolStripMenuItem.Name = "cadastrarClienteToolStripMenuItem";
-            cadastrarClienteToolStripMenuItem.Size = new Size(224, 26);
-            cadastrarClienteToolStripMenuItem.Text = "Cadastrar Cliente";
-            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -155,7 +140,5 @@
         private ToolStripMenuItem ordensDeServiçosToolStripMenuItem;
         private ToolStripMenuItem consultarToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem;
-        private ToolStripMenuItem consultarClienteToolStripMenuItem;
-        private ToolStripMenuItem cadastrarClienteToolStripMenuItem;
     }
 }

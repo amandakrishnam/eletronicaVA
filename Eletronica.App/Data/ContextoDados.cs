@@ -16,7 +16,7 @@ namespace Eletronica.App.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {            
-            optionsBuilder.UseNpgsql("Host=localhost;Database=eletronicaBD;Username=postgres;Password=root");
+            optionsBuilder.UseNpgsql("Host=localhost;Database=eletronicaBD;Username=postgres;Password=1234");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
